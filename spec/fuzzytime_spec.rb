@@ -74,6 +74,11 @@ describe Fuzzytime do
     Fuzzytime.fuzzy_time(t).should include("til")
   end
 
+  it "should read 10PM correctly" do 
+    t = Time.local(2012,1,1,22,00)
+    Fuzzytime.fuzzy_time(t).should == "10 o'clock"
+  end
+
   it "should display 11:45am correctly" do
     t = Time.local(2012,1,1,11,45)
     Fuzzytime.fuzzy_time(t).should == "quarter til noon"

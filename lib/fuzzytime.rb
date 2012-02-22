@@ -29,6 +29,7 @@ module Fuzzytime
     else
       hour = hour % 12
       suffix = t.min.zero? && hour.is_a?(Integer) ? "o'clock" : ""
+      min = nil if t.min.zero?
     end
 
     "#{min} #{rel} #{hour} #{suffix}".strip
